@@ -1,0 +1,48 @@
+h2 { 
+    text-align: center;
+    text-transform: capitalize;
+    font-size: 2rem;
+    padding: 1.3rem;
+    margin: 0;
+}
+
+p {
+    text-align: center;
+    font-size: 1rem;
+}
+
+.firstgrid {
+    display: grid;
+    grid-template-columns: 1fr 1fr 1fr;
+    gap: 16px;
+    border-color: white;
+}
+
+img {
+    width: 350px;
+    border: 4px black solid;
+}
+
+.links {
+    background-color: rgb(123, 123, 123);
+    border-radius: 15px;
+    text-align: center;
+    padding: 10px;
+    color: black;
+    width: 50%;
+    height: 143.5px;
+}
+
+.rechts {
+    background-color: rgb(123, 123, 123);
+    border-radius: 15px;
+    text-align: center;
+    padding: 10px;
+    color: black;
+    width: 50%;
+    height: 143.5px;
+}
+
+#wie, p {
+    text-align: center;
+}
