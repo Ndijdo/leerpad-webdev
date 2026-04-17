@@ -1,0 +1,36 @@
+.header { 
+    background-color: black;
+    padding: 20px;
+    text-align: center;
+}
+
+ .body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+}
+#nav, ul {
+    list-style-type: none;
+    padding: 0;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    height: 90px;
+    background-color: black;
+    color: white;
+    
+}
+
+#hero { 
+    display: flex;
+    align-items: center;
+    gap: 40px;
+    height: 400px;
+    background-color: #D9D9D9;
+
+}
+ .footer {
+    background-color: #f0f0f0;
+    padding: 10px;
+    text-align: center;
+    font-size: 14px;
+}   
