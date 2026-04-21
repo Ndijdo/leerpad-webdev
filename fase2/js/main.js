@@ -1,12 +1,76 @@
-// Your First Code Challenge
-// Write code that will return a random letter form your name.
+// Conditionals : If Statements
+
+// Syntax
+if (condition) { 
+    // run some code
+} else { 
+    // run some different code
+}
 
 
-// This code will return a random letter from a name with 4 letters
-console.log("Ardo".charAt(Math.floor(Math.random() * 4)))
+// Challenge: Soup
+let customerIsBanned = true;
+let soup = 'chicken noodle'
+let crackers = true;
+let reply; 
+
+if (customerIsBanned) {
+    reply = "No soup for you!";
+} else if (soup && crackers) {
+    reply = `Here's your order of ${soup} & crakcers.`;
+}else if (soup) {
+    reply = `Here's your order of ${soup}`;
+} else { 
+    reply = "Sorry, we're out of soup.";
+}
+
+console.log(reply);
 
 
-// This code will return a random letter from a name
-const anyName = "Nathan";
+// Challenge: Grade Assigner
+let testScore = 89;
+let collegeStudent = true;
+let grade;
 
-console.log(anyName.charAt(Math.floor(Math.random() * anyName.length)))
+if(testScore >= 90) {
+    grade = 'A';
+} else if (testScore >= 80) {
+    grade = 'B';
+} else if (testScore >= 70) {
+    grade = 'C';
+} else if (testScore >= 60) {
+    grade = 'D';
+} else {
+    // Nested If Statemets
+    if (collegeStudent) {
+         grade = 'U'
+    } else { 
+        grade = 'F' 
+    }
+}
+
+console.log(grade);
+
+
+// Decision tree! 
+if (playerOne === computer) { 
+    // tie
+} else if (playerOne === 'rock') {
+    if (computer === 'paper') {
+        // computer one wins
+    } else {
+        // player one wins
+    }
+} else if (playerOne === 'paper') { 
+    if (computer === 'scissors') {
+        // computer one wins
+    } else {
+        // player one wins
+    }   
+} else { 
+    if (computer === 'rock') {
+        // computer one wins
+    } else {
+        // player one wins
+    }
+}
