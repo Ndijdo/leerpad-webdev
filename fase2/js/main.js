@@ -1,24 +1,12 @@
-// Math Methods and Properties
-console.log(Math.PI);
-
-console.log(Math.trunc(Math.PI));
-
-console.log(Math.round(3.4));
-console.log(Math.round(3.5));
-
-console.log(Math.ceil(3.2));
-console.log(Math.ceil(3.6));
-
-console.log(Math.floor(3.2));
-console.log(Math.floor(3.6));
-
-console.log(Math.pow(2, 4));
-
-console.log(Math.min(3, 5, 1, 8));
-console.log(Math.max(3, 5, 1, 8));
-
-console.log(Math.random());
+// Your First Code Challenge
+// Write code that will return a random letter form your name.
 
 
-// Fom 1 to 10
-console.log(Math.floor(Math.random() * 10) + 1);
+// This code will return a random letter from a name with 4 letters
+console.log("Ardo".charAt(Math.floor(Math.random() * 4)))
+
+
+// This code will return a random letter from a name
+const anyName = "Nathan";
+
+console.log(anyName.charAt(Math.floor(Math.random() * anyName.length)))
