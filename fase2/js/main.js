@@ -1,76 +1,92 @@
-// Conditionals : If Statements
+// Conditionals: Switch Statements
 
-// Syntax
-if (condition) { 
-    // run some code
-} else { 
-    // run some different code
+// Syntax 
+switch (2) { 
+    case 1: 
+        // run this code
+        console.log("1");
+        break;
+
+    case 2:
+        // run this code
+        console.log("2");
+        break;
+
+    case 3:
+        // run this code
+        console.log("3");
+        break;
+
+    default:
+        // run this code if all choices are false  
+        console.log("no match")    
 }
 
+// Syntax 2.0
+switch (Math.floor(Math.random() * 5 + 1)) { 
+    case 1: 
+        // run this code
+        console.log("1");
+        break;
 
-// Challenge: Soup
-let customerIsBanned = true;
-let soup = 'chicken noodle'
-let crackers = true;
-let reply; 
+    case 2:
+        // run this code
+        console.log("2");
+        break;
 
-if (customerIsBanned) {
-    reply = "No soup for you!";
-} else if (soup && crackers) {
-    reply = `Here's your order of ${soup} & crakcers.`;
-}else if (soup) {
-    reply = `Here's your order of ${soup}`;
-} else { 
-    reply = "Sorry, we're out of soup.";
+    case 3:
+        // run this code
+        console.log("3");
+        break;
+
+    default:
+        // run this code if all choices are false  
+        console.log("no match")    
 }
 
-console.log(reply);
+let playerOne = "rock";
+let playerTwo = "scissors";
 
-
-// Challenge: Grade Assigner
-let testScore = 89;
-let collegeStudent = true;
-let grade;
-
-if(testScore >= 90) {
-    grade = 'A';
-} else if (testScore >= 80) {
-    grade = 'B';
-} else if (testScore >= 70) {
-    grade = 'C';
-} else if (testScore >= 60) {
-    grade = 'D';
-} else {
-    // Nested If Statemets
-    if (collegeStudent) {
-         grade = 'U'
-    } else { 
-        grade = 'F' 
-    }
-}
-
-console.log(grade);
-
-
-// Decision tree! 
-if (playerOne === computer) { 
-    // tie
-} else if (playerOne === 'rock') {
-    if (computer === 'paper') {
-        // computer one wins
-    } else {
-        // player one wins
-    }
-} else if (playerOne === 'paper') { 
-    if (computer === 'scissors') {
-        // computer one wins
-    } else {
-        // player one wins
-    }   
-} else { 
-    if (computer === 'rock') {
-        // computer one wins
-    } else {
-        // player one wins
-    }
+switch (playerOne) {
+    case "rock":
+        switch (playerTwo) {
+            case "rock":
+                console.log("It's a tie!");
+                break;
+            case "paper":
+                console.log("Player Two wins!");
+                break;
+            case "scissors":
+                console.log("Player One wins!");
+                break;
+        }
+        break;
+    case "paper":
+        switch (playerTwo) {
+            case "rock":
+                console.log("Player One wins!");
+                break;
+            case "paper":
+                console.log("It's a tie!");
+                break;
+            case "scissors":
+                console.log("Player Two wins!");
+                break;
+        }
+        break;
+    case "scissors":
+        switch (playerTwo) {
+            case "rock":
+                console.log("Player Two wins!");
+                break;
+            case "paper":
+                console.log("Player One wins!");
+                break;
+            case "scissors":
+                console.log("It's a tie!");
+                break;
+        }
+        break;
+    default:
+        console.log("Invalid choice for Player One");
 }
