@@ -1,102 +1,94 @@
-// Rock, Paper, Scissors: Refactored with Functions
-const initGame = () => {
-    const startGame = confirm("Shall we play rock, paper, scissors?");
-    startGame ? playGame() : alert ("Ok, maybe next time.");
-};
+// Objects 
+// key-value pairs in curly braces 
+const myObj = { name: "Ardo"}
 
-// Game flow function
-const playGame = () => {
-    while (true) {
-        let playerChoice = getPlayerChoice();
-        playerChoice = formatPlayerChoice(playerChoice);
-        if (playerChoice === "") {
-            invalidChoice();
-            continue;
-        }
-        if (!playerChoice) {
-            decideNotToPlay();
-            break;
-        }
-        playerChoice = eveluatePlayerChoice(playerChoice);
-        if (!playerChoice) {
-            invalidChoice();
-            continue
-        }
-        const computerChoice = getComputerChoice();
-        const result = determineWinner(playerChoice, computerChoice);
-        displayResult(result);
-        if (askToPlayAgain()) {
-            continue
-        } else {
-            thanksForPlaying();
-            break;
-        }
+const anotherObj = {
+    alive: true,
+    answer: 42,
+    hobbies: ["eat", "sleep", "code"],
+    beverage: {
+        morning : "coffee",
+        afternoon: "iced tea"
+    },
+    action: function() {
+        return "Hello world!";
+    },
+    action1: function() {
+        return `Time for ${this.beverage.morning}`;
     }
 };
+console.log(anotherObj.hobbies[1])
+console.log(anotherObj["alive"])
+console.log(anotherObj.action())
+console.log(anotherObj.action1())
 
-const getPlayerChoice = () => {
-    return prompt("Please enter rock, paper, or scissors.")
-};
 
-const formatPlayerChoice = (playerChoice) => {
-    if (playerChoice || playerChoice === "") {
-        return playerChoice.trim().toLowerCase();
-    } else {
-        return false;
+// 
+const vehicle = {
+    wheels: 4, 
+    engine: function() {
+        return "vrroooom!";
     }
+}
+
+
+const truck = Object.create(vehicle);
+truck.doors = 2;
+
+console.log(truck);
+console.log(truck.wheels); // Inheritance
+console.log(truck.engine());
+
+const car = Object.create(vehicle);
+car.doors = 4,
+car.engine = function () {
+    return "Whooossshh!"
+};
+console.log(car.engine());
+
+
+const tesla = Object.create(car);
+console.log(tesla.wheels);
+tesla.engine = function() { 
+    return "Shhhh....."
+}
+console.log(tesla.engine()); 
+
+
+const band = {
+    vocals: "Robert Plant",
+    guitar: "Jimmy Page",
+    bass: "John Paul Jones",
+    drums: "John Bonham"
 };
 
-const decideNotToPlay = () => {
-    alert("I guess you changed your mind. Maybe next time.");
+delete band.drums;
+console.log(band.hasOwnProperty("drums"));
+
+console.log(Object.keys(band));
+console.log(Object.values(band));
+
+for (let job in band) { 
+    console.log(` on ${job}, it's ${band[job]}!`);
+
+}
+
+
+// destructuring Object
+const band = {
+    vocals: "Robert Plant",
+    guitar: "Jimmy Page",
+    bass: "John Paul Jones",
+    drums: "John Bonham"
 };
 
-const eveluatePlayerChoice = (playerChoice) => {
-    if (
-        playerChoice === "rock" ||
-        playerChoice === "paper" ||
-        playerChoice === "scissors"
-    ) {
-        return playerChoice
-    } else {
-        return false;
-    }
-};
+const { guitar: myVariable, bass: myBass } = band;
+const { vocals, guitar, bass, drums} = band;
 
-const invalidChoice = () => {
-    alert("You didn't enter rock, paper, or scissors.");
-};
+console.log(myVariable)
+console.log(myBass)
+console.log(guitar);
+console.log(vocals);
 
-const getComputerChoice = () => {
-    const randomNumber = Math.floor(Math.random() * 3);
-    const rpsArray = ["rock", "paper", "scissors"];
-    return rpsArray[randomNumber];
-};
-
-const determineWinner = (player, computer) => {
-    const winner = 
-    player === computer
-      ? "Tie game!"
-      : player === "rock" && computer === "paper"
-      ? `playerOne: ${player}\nComputer : ${computer}\nComputer wins!`
-      : player === "paper" && computer === "scissors"
-      ? `playerOne: ${player}\nComputer : ${computer}\nComputer wins!`
-      : player === "scissors" && computer === "rock"
-      ? `playerOne: ${player}\nComputer : ${computer}\nComputer wins!`
-      : `playerOne: ${player}\nComputer : ${computer}\nplayerOne wins!`;
-
-  return winner;
-};
-
-const displayResult = (result) => {
-    alert(result);
-};
-
-const askToPlayAgain = () => {
-    return confirm("Play agian?");
-};
-
-const thanksForPlaying = () => {
-    alert("Ok, thanks for playing.")
-};
-
-initGame();
+function sings({vocals }) { return `${vocals} sings!`};
+console.log(sings(band));
