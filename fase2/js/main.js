@@ -1,46 +1,35 @@
-// Loops 
+// Functions 
 
-let myNumber = 50;
-while(myNumber < 50 ) { 
-    console.log(myNumber);
-    /* myNumber = myNumber + 1; */
-    /* myNumber++;  */
-    myNumber += 2;
+// Methods = Built-in Functions
+"Ardo".toLowerCase();
+Math.random();
+
+
+// Function Declaration Syntax:
+function sum(num1, num2) {
+    if (num2 === undefined) {
+        return num1 + num1
+;    }
+    return num1 + num2;
 }
+console.log(sum(5,10));
 
-// Don't create an endless loop!
-
-
-// do while loop
-do { 
-    console.log(myNumber);
-} while(myNumber < 50);
-
-
-// for loop
-for (let i = 0; i <= 10; i++) { 
-    console.log(i);
+function getUserNameFromEmail(email) { 
+    return email.slice(0, email.indexOf("@"));
 }
+console.log(getUserNameFromEmail("User@Github.com"));
 
-let name = "Ardo";
-for (let i = 0; i < name.length; i++) { 
-    console.log(name.charAt(i));
+const getUserNameFromEmail = function (email) {
+    return email.slice(0, email.indexOf("@"));
 }
+console.log(getUserNameFromEmail("User1@Github.com"));
 
-
-//while en if loops
-let counter = 0;
-let myLetter;
-let name = "Ardo";
-while (counter <= 3) { 
-    myLetter = name[counter];
-    console.log(myLetter);
-    if (counter === 1) { 
-        counter += 2;
-        continue;
-    }
-    if (myLetter === "d") break;
-    counter++;
-
+const getUserNameFromEmail =  (email) => {
+    return email.slice(0, email.indexOf("@"));
 }
-console.log(counter);
+console.log(getUserNameFromEmail("User2@Github.com"));
+
+const toProperCase = (name) => {
+    return name.charAt(0).toUpperCase() + name.slice(1).toLowerCase();
+};
+console.log(toProperCase("ArDo"));
